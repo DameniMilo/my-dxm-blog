@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content xmlns:j="http://www.jahia.org/jahia/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0">
+    <modules jcr:primaryType="jnt:modules">
+        <my-dxm-blog j:dependencies="blog bootstrap bootstrap3-components bootstrap3-core default jahia-bootstrap-v3-components"
+                  j:installedModules="my-dxm-blog"
+                  j:modulePriority="0"
+                  j:moduleType="templatesSet"
+                  j:title="My Digital Experience Manager Blog"
+                  jcr:primaryType="jnt:module">
+
+            <portlets jcr:primaryType="jnt:portletFolder"/>
+                <files jcr:primaryType="jnt:folder">
+                    <bootstrap jcr:primaryType="jnt:folder">
+                        <css jcr:primaryType="jnt:folder">
+                            <bootstrap.css jcr:primaryType="jnt:file">
+                                <jcr:content jcr:mimeType="text/css" jcr:primaryType="jnt:resource"/>
+                            </bootstrap.css>
+                        </css>
+                        <fonts jcr:primaryType="jnt:folder">
+                            <glyphicons-halflings-regular.svg jcr:mixinTypes="jmix:image" jcr:primaryType="jnt:file">
+                                <jcr:content j:lastExtractionDate="2016-04-27T17:43:34.019+02:00"
+                                  jcr:mimeType="image/svg+xml"
+                                  jcr:primaryType="jnt:resource"/>
+                            </glyphicons-halflings-regular.svg>
+                            <glyphicons-halflings-regular.ttf jcr:primaryType="jnt:file">
+                                <jcr:content jcr:mimeType="application/x-font-ttf" jcr:primaryType="jnt:resource"/>
+                            </glyphicons-halflings-regular.ttf>
+                            <glyphicons-halflings-regular.eot jcr:primaryType="jnt:file">
+                                <jcr:content jcr:mimeType="application/vnd.ms-fontobject"
+                                  jcr:primaryType="jnt:resource"/>
+                            </glyphicons-halflings-regular.eot>
+                            <glyphicons-halflings-regular.woff2 jcr:primaryType="jnt:file">
+                                <jcr:content jcr:mimeType="application/binary" jcr:primaryType="jnt:resource"/>
+                            </glyphicons-halflings-regular.woff2>
+                            <glyphicons-halflings-regular.woff jcr:primaryType="jnt:file">
+                                <jcr:content jcr:mimeType="application/x-font-woff" jcr:primaryType="jnt:resource"/>
+                            </glyphicons-halflings-regular.woff>
+                        </fonts>
+                    </bootstrap>
+                </files>
+            <contents jcr:primaryType="jnt:contentFolder"/>
+                <templates bootstrapVersion="less3"
+                    jcr:mixinTypes="jmix:bootstrapVersion"
+                    jcr:primaryType="jnt:templatesFolder">
+                <files jcr:primaryType="jnt:folder">
+                    <themes jcr:primaryType="jnt:folder">
+                            <default jcr:primaryType="jnt:folder"/>
+                    </themes>
+                        <Chicago_sunrise_1.jpg j:height="2400"
+                                      j:width="7550"
+                                      j:xresolution="300 dots"
+                                      j:yresolution="300 dots"
+                                      jcr:mixinTypes="jmix:exif jmix:image"
+                                      jcr:primaryType="jnt:file">
+                            <jcr:content jcr:mimeType="image/jpeg" jcr:primaryType="jnt:resource"/>
+                            <thumbnail jcr:mimeType="image/jpeg" jcr:primaryType="jnt:resource"/>
+                            <thumbnail2 jcr:mimeType="image/jpeg" jcr:primaryType="jnt:resource"/>
+                        </Chicago_sunrise_1.jpg>
+                </files>
+                <contents jcr:primaryType="jnt:contentFolder"/>
+                    <base j:theme="/modules/my-dxm-blog/templates/files/themes/default"
+                  j:view="my-dxm-blog"
+                  jcr:mixinTypes="jmix:theme"
+                  jcr:primaryType="jnt:template">
+                        <home jcr:primaryType="jnt:pageTemplate">
+                            <base-area jcr:primaryType="jnt:contentList">
+                                            <bootstrap-3-carousel height="350"
+                                                    jcr:primaryType="jnt:bootstrap3Carousel"
+                                           useIndicators="false"
+                                           useLeftAndRightControls="false">
+                                    <bootstrap-3-carousel-item displayCaption="true"
+                                                   displayTitle="true"
+                                                   jcr:primaryType="jnt:bootstrap3CarouselItem">
+                                        <j:translation_en caption="Start your journey inside the Digital Experience Management"
+                                             jcr:language="en"
+                                             jcr:mixinTypes="mix:title"
+                                             jcr:primaryType="jnt:translation"
+                                             jcr:title="Welcome!"
+                                             picture="/modules/my-dxm-blog/templates/files/Chicago_sunrise_1.jpg"/>
+                                    </bootstrap-3-carousel-item>
+                                </bootstrap-3-carousel>
+                                <bootstrap-container fluid="false"
+                                          htmlID="blog-list-container"
+                                          jcr:mixinTypes="jmix:bootstrap3HtmlID"
+                                          jcr:primaryType="jnt:bootstrap3Container">
+                                    <bootstrap-container jcr:primaryType="jnt:contentList">
+                                        <bootstrap-row jcr:primaryType="jnt:bootstrap3Row">
+                                            <bootstrap-column jcr:primaryType="jnt:bootstrap3Column" offset="0" span="8">
+                                                <bootstrap-column jcr:primaryType="jnt:contentList">
+                                                    <last-post-content-list jcr:primaryType="jnt:contentList">
+                                                        <j:translation_en jcr:language="en"
+                                                         jcr:mixinTypes="mix:title"
+                                                         jcr:primaryType="jnt:translation"
+                                                         jcr:title="Last Post"/>
+                                                        <blog-posts j:allowedTypes="mydxmblognt:blogPost"
+                                                   j:subNodesView="short"
+                                                   jcr:primaryType="jnt:area"/>
+                                                    </last-post-content-list>
+                                                    <bootstrap-pagination displayNbOfItemsPerPage="true"
+                                                          displayNbOfItemsPerPageValues="5,10,25,50,100"
+                                                          displayPager="true"
+                                                          j:bindedComponent="/modules/my-dxm-blog/templates/base/home/base-area/bootstrap-container/bootstrap-container/bootstrap-row/bootstrap-column/bootstrap-column/last-post-content-list"
+                                                          jcr:mixinTypes="jmix:simplePager"
+                                                          jcr:primaryType="jnt:bootstrap3Pager"
+                                                          nbOfPages="10"
+                                                          pageSize="10"
+                                                          paginationAlignment="text-center"
+                                                          useArrowNextPrevious="true"/>
+                                            </bootstrap-column>
+                                            </bootstrap-column>
+                                            <bootstrap-column-1 jcr:primaryType="jnt:bootstrap3Column" offset="0" span="4">
+                                                <bootstrap-column-1 jcr:primaryType="jnt:contentList">
+                                                    <bootstrap-row jcr:primaryType="jnt:bootstrap3Row">
+                                                        <bootstrap-column jcr:primaryType="jnt:bootstrap3Column" offset="0" span="12">
+                                                            <bootstrap-column jcr:primaryType="jnt:contentList">
+                                                    <calendar endDateProperty="jcr:created"
+                                              j:bindedComponent="/modules/my-dxm-blog/templates/base/home/base-area/bootstrap-container/bootstrap-container/bootstrap-row/bootstrap-column/bootstrap-column/last-post-content-list"
+                                              jcr:primaryType="jnt:calendar"
+                                              startDateProperty="jcr:created"/>
+                                                            </bootstrap-column>
+                                                        </bootstrap-column>
+                                                    </bootstrap-row>
+                                                    <bootstrap-row-1 jcr:primaryType="jnt:bootstrap3Row">
+                                                        <bootstrap-column jcr:primaryType="jnt:bootstrap3Column" offset="0" span="12">
+                                                            <bootstrap-column jcr:primaryType="jnt:contentList">
+                                                                <facets-list j:bindedComponent="/modules/my-dxm-blog/home"
+                                                          j:type="jnt:blogPost"
+                                                          j:view="javascripttagcloud"
+                                                          jcr:mixinTypes="jmix:renderable"
+                                                          jcr:primaryType="jnt:facets"/>
+                                                        </bootstrap-column>
+                                                        </bootstrap-column>
+                                                    </bootstrap-row-1>
+                                            </bootstrap-column-1>
+                                            </bootstrap-column-1>
+                                        </bootstrap-row>
+                                    </bootstrap-container>
+                                </bootstrap-container>
+                            </base-area>
+                        </home>
+                        <pagecontent jcr:primaryType="jnt:contentList">
+                            <enhanced-navbar fluid="true"
+                                   inverse="true"
+                                   jcr:primaryType="bootstrap3nt:enhancedNavBar"
+                                   option="navbar-static-top"
+                                   responsive="true">
+                                <j:translation_en jcr:language="en"
+                                       jcr:mixinTypes="mix:title"
+                                       jcr:primaryType="jnt:translation"
+                                       jcr:title="My Digital Experience Manager Blog"/>
+                                <login jcr:primaryType="bootstrap3nt:navBarItemLoginForm"
+                            position="right"
+                            view="menu"/>
+                                <search-form jcr:primaryType="bootstrap3nt:navBarItemSimpleSearchForm"
+                                  position="right"
+                                  result="/modules/my-dxm-blog/search-results"/>
+                                <navigation-menu j:baselineNode="home"
+                                      j:maxDepth="1"
+                                      j:startLevel="0"
+                                      jcr:primaryType="bootstrap3nt:navBarItemMenu"
+                                      position="right"/>
+                            </enhanced-navbar>
+                            <central-container fluid="true"
+                             htmlID="blog-main-container"
+                             jcr:mixinTypes="bootstrap3mix:htmlID"
+                                     jcr:primaryType="bootstrap3nt:container">
+                                <central-container jcr:primaryType="jnt:contentList">
+                                    <base-area jcr:primaryType="jnt:area"/>
+                            </central-container>
+                            </central-container>
+                            <footer-section columnsType="nogrid"
+                                  jcr:mixinTypes="bootstrap3mix:createSection"
+                                  jcr:primaryType="bootstrap3nt:columns"
+                                  sectionElement="footer"
+                                  sectionId="blog-footer-container">
+                                <footer-section jcr:primaryType="jnt:contentList">
+                                    <footer-container columnsType="predefinedColumns"
+                                              grid="4_4_4"
+                                              gridLayout="fixed-width"
+                                              jcr:mixinTypes="bootstrap3mix:createContainer bootstrap3mix:createRow bootstrap3mix:predefinedColumns"
+                                              jcr:primaryType="bootstrap3nt:columns">
+                                        <footer-container-main jcr:primaryType="jnt:contentList">
+                                            <footer-column-1 j:allowedTypes="jnt:bigText"
+                                                   j:limitedAbsoluteAreaEdit="false"
+                                                   jcr:primaryType="jnt:absoluteArea"/>
+                                        </footer-container-main>
+                                        <footer-container-side jcr:primaryType="jnt:contentList">
+                                            <footer-column-2 j:allowedTypes="jnt:bigText"
+                                                   j:limitedAbsoluteAreaEdit="false"
+                                                   jcr:primaryType="jnt:absoluteArea"/>
+                                        </footer-container-side>
+                                        <footer-container-extra jcr:primaryType="jnt:contentList">
+                                            <footer-column-3 j:allowedTypes="jnt:bigText"
+                                                   j:limitedAbsoluteAreaEdit="false"
+                                                   jcr:primaryType="jnt:absoluteArea"/>
+                                        </footer-container-extra>
+                                    </footer-container>
+                            </footer-section>
+                            </footer-section>
+                        </pagecontent>
+                    <blog-post j:applyOn="mydxmblognt:blogPost"
+                       j:defaultTemplate="true"
+                       j:hiddenTemplate="false"
+                       j:priority="10"
+                       jcr:primaryType="jnt:contentTemplate">
+                        <j:translation_en jcr:language="en"
+                                 jcr:mixinTypes="mix:title"
+                                 jcr:primaryType="jnt:translation"
+                                 jcr:title="Blog Post"/>
+                        <pagecontent jcr:primaryType="jnt:contentList">
+                            <bootstrap-row jcr:primaryType="jnt:bootstrap3Row">
+                                <bootstrap-column jcr:primaryType="jnt:bootstrap3Column" offset="0" span="12">
+                                    <bootstrap-column jcr:primaryType="jnt:contentList">
+                                        <main-resource-display jcr:primaryType="jnt:mainResourceDisplay"/>
+                                </bootstrap-column>
+                                </bootstrap-column>
+                            </bootstrap-row>
+                        </pagecontent>
+                            <base-area jcr:primaryType="jnt:contentList">
+                                <blog-post-container columnsType="predefinedColumns"
+                                          grid="8_4"
+                                          gridLayout="fixed-width"
+                                          jcr:mixinTypes="bootstrap3mix:createContainer bootstrap3mix:createRow bootstrap3mix:predefinedColumns"
+                                          jcr:primaryType="bootstrap3nt:columns">
+                                    <blog-post-container-main jcr:primaryType="jnt:contentList">
+                                        <main-resource-display j:mainResourceView="default" jcr:primaryType="jnt:mainResourceDisplay"/>
+                                    </blog-post-container-main>
+                                    <blog-post-container-side jcr:primaryType="jnt:contentList">
+                                        <author-display j:about="true"
+                                           j:birthDate="true"
+                                           j:email="false"
+                                           j:firstName="true"
+                                           j:gender="false"
+                                           j:lastName="true"
+                                           j:picture="true"
+                                           j:title="false"
+                                           j:userView="mydxmblog"
+                                           jcr:primaryType="jnt:authorDisplay"/>
+                                    </blog-post-container-side>
+                                </blog-post-container>
+                            </base-area>
+                    </blog-post>
+                        <results jcr:primaryType="jnt:pageTemplate">
+                            <base-area jcr:primaryType="jnt:contentList">
+                                <results-container columnsType="predefinedColumns"
+                                        grid="12"
+                                        gridLayout="fixed-width"
+                                        jcr:mixinTypes="bootstrap3mix:createContainer bootstrap3mix:createRow bootstrap3mix:predefinedColumns"
+                                        jcr:primaryType="bootstrap3nt:columns">
+                                    <results-container-main jcr:primaryType="jnt:contentList">
+                                        <pager displayPager="true"
+                                  j:bindedComponent="/modules/my-dxm-blog/templates/base/results/base-area/results-container/results-container-main/search-results"
+                                  jcr:primaryType="bootstrap3nt:pagination"/>
+                                        <search-results autoSuggest="true"
+                                           autoSuggestHitCount="2"
+                                           autoSuggestMaxTermCount="1"
+                                           autoSuggestMinimumHitCount="2"
+                                           jcr:primaryType="jnt:searchResults">
+                                            <j:translation_en jcr:language="en"
+                                                jcr:mixinTypes="mix:title"
+                                                jcr:primaryType="jnt:translation"
+                                                jcr:title="Search results"/>
+                                        </search-results>
+                                        <pager-1 displayPager="true"
+                                    j:bindedComponent="/modules/my-dxm-blog/templates/base/results/base-area/results-container/results-container-main/search-results"
+                                    jcr:primaryType="bootstrap3nt:pagination"/>
+                                    </results-container-main>
+                                </results-container>
+                            </base-area>
+                        </results>
+                        <gallery j:hiddenTemplate="false" jcr:primaryType="jnt:pageTemplate">
+                            <base-area jcr:primaryType="jnt:contentList">
+                                <gallery-container columnsType="predefinedColumns"
+                                                    grid="12"
+                                                    gridLayout="fixed-width"
+                                                    jcr:mixinTypes="bootstrap3mix:createContainer bootstrap3mix:createRow bootstrap3mix:predefinedColumns"
+                                        jcr:primaryType="bootstrap3nt:columns">
+                                    <gallery-container-main jcr:primaryType="jnt:contentList"/>
+                                </gallery-container>
+                            </base-area>
+                        </gallery>
+                        <about j:hiddenTemplate="false" jcr:primaryType="jnt:pageTemplate"/>
+                    </base>
+            </templates>
+                
+                <home j:isHomePage="true"
+               j:templateName="home"
+               jcr:primaryType="jnt:page">
+                    <j:translation_en jcr:language="en"
+                              jcr:mixinTypes="mix:title"
+                              jcr:primaryType="jnt:translation"
+                              jcr:title="Home"/>
+                </home>
+                <search-results j:templateName="results" jcr:primaryType="jnt:page">
+                    <j:translation_en jcr:language="en"
+                              jcr:mixinTypes="mix:title"
+                              jcr:primaryType="jnt:translation"
+                              jcr:title="Search Results"/>
+                </search-results>
+        </my-dxm-blog>
+    </modules>
+</content>

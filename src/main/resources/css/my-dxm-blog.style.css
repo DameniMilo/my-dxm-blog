@@ -1,0 +1,21 @@
+.navbar {
+    margin-bottom: 0;
+}
+
+#blog-main-container {
+    padding: 0;
+}
+
+#blog-footer-container {
+    height: 40px;
+    padding: 0;
+    background-color: #333333;
+}
+
+#blog-list-container {
+    padding-top: 20px;
+}
+
+.fc-state-default .fc-button-effect span {
+    width: 40px !important;
+}
