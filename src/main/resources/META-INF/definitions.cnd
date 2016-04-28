@@ -1,6 +1,9 @@
 <jmix = 'http://www.jahia.org/jahia/mix/1.0'>
 <jnt = 'http://www.jahia.org/jahia/nt/1.0'>
 <mydxmblognt = 'http://www.jahia.org/mydxmblog/nt/1.0'>
+<mydxmblogmix = 'http://www.jahia.org/mydxmblog/mix/1.0'>
 
-[mydxmblognt:blogPost] > jnt:blogPost, jmix:droppableContent
+[mydxmblogmix:structuredContent] > jmix:droppableContent mixin
+
+[mydxmblognt:blogPost] > jnt:blogPost, mydxmblogmix:structuredContent
 
