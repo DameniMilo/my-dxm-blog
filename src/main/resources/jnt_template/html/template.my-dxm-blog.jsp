@@ -30,7 +30,7 @@
         </template:addResources>
     </head>
 
-    <body>
+    <body id="my-dxm-blog">
         <template:area path="pagecontent"/>
     </body>
 </html>

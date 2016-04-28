@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <content xmlns:j="http://www.jahia.org/jahia/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0">
     <modules jcr:primaryType="jnt:modules">
-        <my-dxm-blog j:dependencies="blog bootstrap3-components bootstrap3-core default"
+        <my-dxm-blog j:dependencies="blog blueimp-gallery bootstrap3-components bootstrap3-core default jahia-disqus-connector location"
                   j:installedModules="my-dxm-blog"
                   j:modulePriority="0"
                   j:moduleType="templatesSet"
@@ -26,6 +26,14 @@
                             <thumbnail jcr:mimeType="image/jpeg" jcr:primaryType="jnt:resource"/>
                             <thumbnail2 jcr:mimeType="image/jpeg" jcr:primaryType="jnt:resource"/>
                         </Chicago_sunrise_1.jpg>
+                        <logo-jahia-2016.png j:height="120"
+                                    j:width="250"
+                                    jcr:mixinTypes="jmix:image"
+                                    jcr:primaryType="jnt:file">
+                            <jcr:content jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                            <thumbnail jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                            <thumbnail2 jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                        </logo-jahia-2016.png>
                 </files>
                 <contents jcr:primaryType="jnt:contentFolder"/>
                     <base j:theme="/modules/my-dxm-blog/templates/files/themes/default"
@@ -50,7 +58,6 @@
                                     </element>
                                 </carousel>
                                 <blog-list-container columnsType="predefinedColumns"
-                                          containerId="blog-list-container"
                                           grid="8_4"
                                           gridLayout="fixed-width"
                                           jcr:mixinTypes="bootstrap3mix:createContainer bootstrap3mix:createRow bootstrap3mix:predefinedColumns"
@@ -108,7 +115,7 @@
                             <enhanced-navbar fluid="true"
                                    inverse="true"
                                    jcr:primaryType="bootstrap3nt:enhancedNavBar"
-                                   option="navbar-static-top"
+                                   option="navbar-fixed-top"
                                    responsive="true">
                                 <j:translation_en jcr:language="en"
                                        jcr:mixinTypes="mix:title"
@@ -137,8 +144,7 @@
                             <footer-section columnsType="nogrid"
                                   jcr:mixinTypes="bootstrap3mix:createSection"
                                   jcr:primaryType="bootstrap3nt:columns"
-                                  sectionElement="footer"
-                                  sectionId="blog-footer-container">
+                                  sectionElement="footer">
                                 <footer-section jcr:primaryType="jnt:contentList">
                                     <footer-container columnsType="predefinedColumns"
                                               grid="4_4_4"
@@ -181,6 +187,7 @@
                                           jcr:primaryType="bootstrap3nt:columns">
                                     <blog-post-container-main jcr:primaryType="jnt:contentList">
                                         <main-resource-display j:mainResourceView="default" jcr:primaryType="jnt:mainResourceDisplay"/>
+                                        <disqus-thread jcr:primaryType="jnt:disqusThread"/>
                                     </blog-post-container-main>
                                     <blog-post-container-side jcr:primaryType="jnt:contentList">
                                         <author-display j:about="true"
@@ -236,7 +243,50 @@
                                 </gallery-container>
                             </base-area>
                         </gallery>
-                        <about j:hiddenTemplate="false" jcr:primaryType="jnt:pageTemplate"/>
+                        <about j:hiddenTemplate="false" jcr:primaryType="jnt:pageTemplate">
+                            <base-area jcr:primaryType="jnt:contentList">
+                                <about-container columnsType="predefinedColumns"
+                                      grid="8_4"
+                                      gridLayout="fixed-width"
+                                      jcr:mixinTypes="bootstrap3mix:createContainer bootstrap3mix:createRow bootstrap3mix:predefinedColumns"
+                                      jcr:primaryType="bootstrap3nt:columns">
+                                    <about-container-main jcr:primaryType="jnt:contentList">
+                                        <image-from-the-document-manager j:linkType="external"
+                                                            jcr:mixinTypes="jmix:externalLink"
+                                                            jcr:primaryType="jnt:imageReferenceLink">
+                                            <j:translation_en j:alternateText="Jahia Logo"
+                                                j:node="/modules/my-dxm-blog/templates/files/logo-jahia-2016.png"
+                                                j:url="https://www.jahia.com"
+                                                jcr:language="en"
+                                                jcr:primaryType="jnt:translation"/>
+                                        </image-from-the-document-manager>
+                                        <rich-text jcr:primaryType="jnt:bigText">
+                                            <j:translation_en jcr:language="en"
+                                                jcr:primaryType="jnt:translation"
+                                                text="&lt;p&gt;&amp;nbsp;&lt;/p&gt;&#xA;&#xA;&lt;p&gt;Jahia puts the customer at the heart of each enterprise&amp;rsquo;s digital success.&amp;nbsp;Jahia enables CMOs and CIOs to become digital leaders in their industry through 1:1 customer relationships powered by digital innovation, digital trust&amp;nbsp;and a customer-centric digital workforce.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;With Jahia, CMOs and CIOs can partner to capitalize on market disruption and gain digital agility now to secure market leadership and long-lasting competitive advantage through personalized digital experiences.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;More information &lt;a href=&#34;https://jahia.com&#34; title=&#34;Jahia&#34;&gt;here&lt;/a&gt;&lt;/p&gt;&#xA;"/>
+                                        </rich-text>
+                                    </about-container-main>
+                                    <about-container-side jcr:primaryType="jnt:contentList">
+                                        <map j:bindedComponent="/modules/my-dxm-blog/templates/base/about/base-area/about-container/about-container-side/jahia-solutions-france"
+                                j:height="250"
+                                j:mapType="roadmap"
+                                j:zoom="1"
+                                jcr:primaryType="jnt:map"/>
+                                        <jahia-solutions-france j:country="FR"
+                                                   j:latitude="48.8684867"
+                                                   j:longitude="2.3459231"
+                                                   j:street="8 rue du sentier"
+                                                   j:town="Paris"
+                                                   j:zipCode="75002"
+                                                   jcr:primaryType="jnt:location">
+                                            <j:translation_en jcr:language="en"
+                                                jcr:primaryType="jnt:translation"
+                                                jcr:title="Jahia Solutions France"/>
+                                        </jahia-solutions-france>
+                                    </about-container-side>
+                                </about-container>
+                            </base-area>
+                        </about>
                     </base>
             </templates>
                 
@@ -247,6 +297,18 @@
                               jcr:mixinTypes="mix:title"
                               jcr:primaryType="jnt:translation"
                               jcr:title="Home"/>
+                    <gallery j:templateName="gallery" jcr:primaryType="jnt:page">
+                        <j:translation_en jcr:language="en"
+                                 jcr:mixinTypes="mix:title"
+                                 jcr:primaryType="jnt:translation"
+                                 jcr:title="Gallery"/>
+                    </gallery>
+                    <about j:templateName="about" jcr:primaryType="jnt:page">
+                        <j:translation_en jcr:language="en"
+                                 jcr:mixinTypes="mix:title"
+                                 jcr:primaryType="jnt:translation"
+                                 jcr:title="About"/>
+                    </about>
                 </home>
                 <search-results j:templateName="results" jcr:primaryType="jnt:page">
                     <j:translation_en jcr:language="en"
