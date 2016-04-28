@@ -62,7 +62,7 @@
     <developerConnection>scm:dummy:uri</developerConnection>
   </scm>
   <properties>
-    <jahia-depends>bootstrap3-components,bootstrap3-core,default,blog,bootstrap,jahia-bootstrap-v3-components</jahia-depends>
+    <jahia-depends>bootstrap3-components,bootstrap3-core,default,blog</jahia-depends>
   </properties>
   <repositories>
     <repository>
