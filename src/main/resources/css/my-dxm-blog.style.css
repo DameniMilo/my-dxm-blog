@@ -1,21 +1,33 @@
-.navbar {
-    margin-bottom: 0;
+html {
+    height: 100%;
 }
 
-#blog-main-container {
-    padding: 0;
+body {
+    height: 100%;
 }
 
-#blog-footer-container {
-    height: 40px;
-    padding: 0;
+footer {
+    min-height: 40px;
     background-color: #333333;
 }
 
-#blog-list-container {
+#my-dxm-blog .navbar {
+    margin-bottom: 0;
+}
+
+#my-dxm-blog .navbar-inverse .glyphicon{
+    color: #9d9d9d;
+}
+
+#blog-main-container {
+    padding: 51px 0 0;
+    min-height: 94.9%;
+}
+
+#my-dxm-blog .container {
     padding-top: 20px;
 }
 
-.fc-state-default .fc-button-effect span {
-    width: 40px !important;
+#my-dxm-blog .fc-state-default .fc-button-effect span {
+    width: 40px;
 }
